@@ -24,7 +24,7 @@ set :pty, true
 set :ssh_options, {
   forward_agent: true,
   auth_methods: ["publickey"],
-  keys: ["/Users/john/DCMIC.pem"]
+  keys: ["/var/lib/jenkins/.ssh/DCMIC.pem"]
 }
 
 # Default value for :linked_files is []
