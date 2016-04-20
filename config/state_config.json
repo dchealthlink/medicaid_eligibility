@@ -321,7 +321,7 @@
     "Option Dependent Student": "Y",
 
     "Option Adult Group": "Y",
-    "Option Young Adults": "Y",
+    "Option Young Adults": "N",
     "Young Adult Age Threshold": 21,
     "Foster Care Age Threshold": 18,
     "In-State Foster Care Required": "Y",
