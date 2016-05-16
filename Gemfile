@@ -23,7 +23,7 @@ gem "uglifier"
 
 gem "gon"
 gem "httparty"
-
+gem 'ci_reporter_rspec'
 gem "rails_12factor"
 
 # Use unicorn as the app server

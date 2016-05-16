@@ -12,6 +12,10 @@
       "2015": {
         "Base FPL": 11770,
         "FPL Per Person": 4160
+      },
+      "2016": {
+        "Base FPL": 11880,
+        "FPL Per Person": 4140
       }
     },
 
@@ -303,7 +307,7 @@
 
   "DC": {
     "Option Householding Minor Student": "N",
-    "Count Unborn Children for Household": "01",
+    "Count Unborn Children for Household": "03",
     "Option Deny Residency to Temporary Resident Students": "N",
     "Option Require Work Quarters": "N",
     "State Applies Seven Year Limit": "N",
@@ -317,7 +321,7 @@
     "Option Dependent Student": "Y",
 
     "Option Adult Group": "Y",
-    "Option Young Adults": "Y",
+    "Option Young Adults": "N",
     "Young Adult Age Threshold": 21,
     "Foster Care Age Threshold": 18,
     "In-State Foster Care Required": "Y",
