@@ -11,7 +11,7 @@ gem 'newrelic_rpm'
 gem 'rails-api'
 
 gem 'activerecord-nulldb-adapter'
-gem 'pg'
+#gem 'pg'
 
 gem "active_model_serializers"
 
