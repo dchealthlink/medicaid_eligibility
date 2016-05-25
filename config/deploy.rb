@@ -3,7 +3,7 @@ lock '3.4.0'
 
 set :application, 'mitc'
 #set :repo_url, 'git@github.com:lincolnsmithy/medicaid_eligibility.git'
-set :repo_url, 'https://github.com/lincolnsmithy/medicaid_eligibility.git'
+set :repo_url, 'https://github.com/dchealthlink/MITC.git'
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
@@ -24,7 +24,7 @@ set :pty, true
 set :ssh_options, {
   forward_agent: true,
   auth_methods: ["publickey"],
-  keys: ["/var/lib/jenkins/.ssh/DCMIC.pem"]
+  keys: ["/var/lib/jenkins/.ssh/DCIM.pem"]
 }
 
 # Default value for :linked_files is []

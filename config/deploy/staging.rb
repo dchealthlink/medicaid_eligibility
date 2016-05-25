@@ -16,9 +16,9 @@
 # group is considered to be the first unless any  hosts have the primary
 # property set. Specify the username and a domain or IP for the server.
 # Don't use `:all`, it's a meta role.
-role :app, %w{deploy@96.127.110.203}
-role :web, %w{deploy@96.127.110.203}
-role :db,  %w{deploy@96.127.110.203}
+role :app, %w{deploy@54.236.67.240}
+role :web, %w{deploy@54.236.67.240}
+role :db,  %w{deploy@54.236.67.240}
 
 #role :app, %w{ubuntu@ec2-96-127-110-203.us-gov-west-1.compute.amazonaws.com}
 #role :web, %w{ubuntu@ec2-96-127-110-203.us-gov-west-1.compute.amazonaws.com}
