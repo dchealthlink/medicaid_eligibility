@@ -3,7 +3,6 @@
 medicaid_eligibility
 >>>>>>> e652f3950d1a6ff05798e146cc72c2e35de2300e
 ========================
-Test Commit
 
 This is a rules engine, API, and web application that assesses Medicaid Eligibility based on an applicant’s household's Modified Adjusted Gross Income (MAGI) and other eligibility criteria, a requirement of the Affordable Care Act which sets the new baseline for eligibility. This system was implemented in partnership with the HHSEntrepeneurs program, BlueLabs, and the State Health Reform Assistance Network (State Network), a Robert Wood Johnson Foundation funded program. It makes determinations without accepting any personally identifiable information. 
 
