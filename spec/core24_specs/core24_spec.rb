@@ -1,4 +1,5 @@
-require 'spec_helper'
+	require 'spec_helper'
+	
 
 RSpec.describe "Test cases for all Core 24 Json files" do
 
@@ -6,7 +7,8 @@ def get_response(file)
 jsonfile = File.open(file).read
 json_response = Application.new(jsonfile, 'application/json')
 @json_response = JSON.parse(json_response.to_json) 
-puts "The number of applicants in #{file} json file: #{@json_response['Applicants'].count}"
+puts "The number of applicants in #{file} file: #{@json_response['Applicants'].count}" + "\n"
+puts "Json Input: #{JSON.pretty_generate(JSON.parse(jsonfile))}"
 return @json_response
 end
 
@@ -14,6 +16,7 @@ shared_examples_for "Core 24 tests" do
 
 		it "Compares FPL" do
 		@json_response["Applicants"].each_with_index do |applicant, index|
+		puts "Expected result for applicant:#{index+1} => #{@person[index]}"
 		expect(applicant['Medicaid Household']['MAGI as Percentage of FPL']).to eq @person[index][:FPL]
 		end
 		end
@@ -39,7 +42,7 @@ shared_examples_for "Core 24 tests" do
 
 		it "Compares EmergencyMedicaid Eligibility" do
 		@json_response["Applicants"].each_with_index do |applicant, index|
-		if @person[index][:EmergencyMedicaid]
+		if @person[index].key?(:EmergencyMedicaid)
 		expect(applicant['Determinations']['Emergency Medicaid']['Indicator']).to eq @person[index][:EmergencyMedicaid]
 		end
 		end
