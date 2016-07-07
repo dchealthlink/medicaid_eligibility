@@ -1,4 +1,4 @@
-	require 'spec_helper'
+require 'spec_helper'
 	
 
 RSpec.describe "Test cases for all Core 24 Json files" do
