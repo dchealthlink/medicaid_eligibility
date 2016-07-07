@@ -35,6 +35,7 @@ gem 'capistrano', :group => :development
 group :development, :test do
   gem 'jasmine'
   gem 'spring'
+  gem 'rspec-rails', '~> 3.4'
 end
 
 group :test do 
@@ -50,6 +51,3 @@ end
 # travis
 gem 'rake', group: :test
 
-group :development, :test do
-  gem 'rspec-rails', '~> 3.4'
-end
