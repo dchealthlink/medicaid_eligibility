@@ -230,6 +230,7 @@ module ApplicationParser
     get_variable(json_object[input[:name]], input, attributes)
   end
 
+
   def get_json_income(json_income)
     income_fields = ApplicationVariables::INCOME_INPUTS
     income = {incomes: {}, deductions: {}}
@@ -245,6 +246,7 @@ module ApplicationParser
 
       for income_field in income_fields[:deductions]
         income[:deductions][income_field] = get_json_income_field(json_income[income_field], income_field, :positive)
+
       end
     end
 

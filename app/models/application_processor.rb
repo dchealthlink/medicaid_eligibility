@@ -223,6 +223,5 @@ module ApplicationProcessor
       p.income[:incomes].inject(0){|sum, (name, amt)| sum + amt} - 
       p.income[:deductions].inject(0){|sum, (name, amt)| sum + amt}
     }.sum
-
   end
 end
