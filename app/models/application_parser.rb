@@ -239,14 +239,14 @@ module ApplicationParser
     income = {}
     income_calculation = ApplicationVariables::INCOME_INPUTS[income_type]
     if json_income && json_income[income_calculation[:primary_income]]
-      income[:primary_income] = json_income[income_calculation[:primary_income]].to_i
+      income[:primary_income] = json_income[income_calculation[:primary_income]]
       income[:other_income] = {}
       for other_income in income_calculation[:other_income]
-        income[:other_income][other_income] = (json_income[other_income] || 0).to_i
+        income[:other_income][other_income] = (json_income[other_income] || 0)
       end
       income[:deductions] = {}
       for deduction in income_calculation[:deductions]
-        income[:deductions][deduction] = (json_income[deduction] || 0).to_i
+        income[:deductions][deduction] = (json_income[deduction] || 0)
       end
     end
     

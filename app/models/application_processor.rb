@@ -212,7 +212,7 @@ module ApplicationProcessor
     med_household_members.uniq!
 
     income_people = count_income_people(med_household_members)
-    income = calculate_household_income(med_household_members, income_people)
+    income = calculate_household_income(med_household_members, income_people).to_f
     household_size = calculate_household_size(person, med_household_members)
 
     return MedicaidHousehold.new(nil, med_household_members, income_people, income, household_size)
@@ -277,6 +277,6 @@ module ApplicationProcessor
       obj.income[:other_income].inject(0){|sum, (name, amt)| sum + amt} - 
       obj.income[:deductions].inject(0){|sum, (name, amt)| sum + amt}
     }
-    return incomes.sum
+    return incomes.sum.to_f
   end
 end
