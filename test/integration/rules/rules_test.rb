@@ -54,8 +54,8 @@ class MagiRulesTest < ActionDispatch::IntegrationTest
 
             assert_equal set[:expected_outputs]['Qualified Children List'].count, result.output['Qualified Children List'].count
           else          
-            set[:expected_outputs].each_key do |out|
-              assert_equal set[:expected_outputs][out], result.output[out]
+             set[:expected_outputs].each_key do |out|
+               assert_equal set[:expected_outputs][out], result.output[out]
             end
           end
 
