@@ -1,13 +1,16 @@
 module ApplicationComponents
   class Person
-    attr_reader :person_id, :person_attributes, :income
-    attr_accessor :relationships, :medicaid_household
+    attr_reader :person_id, :person_attributes, :income, :applicant_id, :applicant_attributes
+    attr_accessor :relationships, :medicaid_household, :outputs
 
-    def initialize(person_id, person_attributes, income)
+    def initialize(person_id, person_attributes, income, applicant_id=nil, applicant_attributes={})
       @person_id = person_id
       @person_attributes = person_attributes
       @relationships = []
       @income = income
+      @applicant_id = applicant_id
+      @applicant_attributes = applicant_attributes
+      @outputs = {}
     end
 
     def get_relationships(relationship_type)
@@ -16,18 +19,6 @@ module ApplicationComponents
 
     def get_relationship(relationship_type)
       get_relationships(relationship_type).first
-    end
-  end
-
-  class Applicant < Person
-    attr_reader :applicant_id, :applicant_attributes
-    attr_accessor :outputs
-
-    def initialize(person_id, person_attributes, applicant_id, applicant_attributes, income)
-      super person_id, person_attributes, income
-      @applicant_id = applicant_id
-      @applicant_attributes = applicant_attributes
-      @outputs = {}
     end
   end
 
@@ -63,12 +54,11 @@ module ApplicationComponents
   end
 
   class TaxReturn
-    attr_reader :filers, :dependents, :income
+    attr_reader :filers, :dependents
 
-    def initialize(filers, dependents, income)
+    def initialize(filers, dependents)
       @filers = filers
       @dependents = dependents
-      @income = income
     end
   end
 end

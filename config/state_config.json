@@ -15,7 +15,17 @@
       },
       "2016": {
         "Base FPL": 11880,
-        "FPL Per Person": 4140
+        "FPL By Age": [
+          11880,
+          16020,
+          20160,
+          24300,
+          28440,
+          32580,
+          36730,
+          40890
+        ],
+        "FPL Per Extra Person": 4160
       }
     },
 
@@ -208,6 +218,19 @@
       "2015": {
         "Base FPL": 13550,
         "FPL Per Person": 4780
+      },
+      "2016": {
+        "FPL By Age": [
+          13670,
+          18430,
+          23190,
+          27950,
+          32710,
+          37470,
+          42230,
+          47010
+        ],
+        "FPL Per Extra Person": 4780
       }
     }
   },
@@ -352,8 +375,18 @@
       },
       "Child Category": {
         "percentage": "Y",
-        "method": "standard",
-        "threshold": 319
+        "method": "age",
+        "age": [
+          {
+            "minimum": 0,
+            "maximum": 18,
+            "threshold": 319
+          },{
+            "minimum": 19,
+            "maximum": 20,
+            "threshold": 216
+          }
+        ]
       }
     },
     "CHIP Thresholds": {}
@@ -563,6 +596,26 @@
             2316
           ],
           "additional person": 195
+        },
+        "2016": {
+          "percentage": "N",
+          "monthly": "Y",
+          "includes_disregard": "Y",
+          "method": "household_size",
+          "household_size": [
+            0,
+            517,
+            694,
+            871,
+            1048,
+            1226,
+            1403,
+            1580,
+            1757,
+            1934,
+            2111
+          ],
+          "additional person": 178
         }
       },
       "Pregnancy Category": {
@@ -697,6 +750,19 @@
       "2015": {
         "Base FPL": 14720,
         "FPL Per Person": 5200
+      },
+      "2016": {
+        "FPL By Age": [
+          14840,
+          20020,
+          25200,
+          30380,
+          35560,
+          40740,
+          45920,
+          51120
+        ],
+        "FPL Per Extra Person": 5200
       }
     },
 
@@ -2313,7 +2379,7 @@
 
  "NJ": {
     "Option Householding Minor Student": "Y",
-    "Count Unborn Children for Household": "03",
+    "Count Unborn Children for Household": "01",
     "Option Deny Residency to Temporary Resident Students": "N",
     "Option Require Work Quarters": "N",
     "State Applies Seven Year Limit": "N",
