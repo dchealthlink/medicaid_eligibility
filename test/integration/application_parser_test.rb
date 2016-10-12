@@ -102,9 +102,6 @@ class ApplicationParserTest < ActionDispatch::IntegrationTest
 
       # TODO: I don't really trust the method of checking inputs. Check with Curtis on a good way to do this 
       @applicants.each do |applicant|
-        # check that 'Is Applicant' ensures that you get initialized as an applicant
-        assert_kind_of Applicant, applicant
-
         json_applicant = @json_application['People'].find { |a| a['Person ID'] = applicant.person_id }
 
         # confirm that all fields from the json object are reflected in the applicant object
@@ -154,11 +151,10 @@ class ApplicationParserTest < ActionDispatch::IntegrationTest
         # should get personal income properly for everyone
         # this is basically a test of the result of get_json_income person, :personal
         json_applicant = @json_application['People'].find { |a| a['Person ID'] == person.person_id }
-        assert_equal json_applicant['Income']['Wages, Salaries, Tips'], person.income[:primary_income]
-        ApplicationVariables::INCOME_INPUTS[:personal][:other_income].each do |input|
-          assert_equal json_applicant['Income'][input], person.income[:other_income][input]
+        ApplicationVariables::INCOME_INPUTS[:incomes].each do |input|
+          assert_equal json_applicant['Income'][input], person.income[:incomes][input]
         end
-        ApplicationVariables::INCOME_INPUTS[:personal][:deductions].each do |input|
+        ApplicationVariables::INCOME_INPUTS[:deductions].each do |input|
           # this is just magi deductions
           assert_equal json_applicant['Income'][input], person.income[:deductions][input]
         end
